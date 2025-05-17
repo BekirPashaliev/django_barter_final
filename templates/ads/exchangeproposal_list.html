@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Мои предложения{% endblock %}
+{% block content %}
+<h1>Мои предложения</h1>
+{% for p in proposals %}
+    <div class="border p-3 mb-2">
+        {{ p.ad_sender }} → {{ p.ad_receiver }} | {{ p.get_status_display }}
+    </div>
+{% empty %}
+    <p>Нет предложений.</p>
+{% endfor %}
+{% endblock %}
