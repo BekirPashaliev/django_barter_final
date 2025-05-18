@@ -68,6 +68,10 @@ USE_I18N = True
 USE_TZ = True
 
 STATIC_URL = '/static/'
+# Если нужен каталог статических файлов, раскомментируйте
 STATICFILES_DIRS = [BASE_DIR / 'static']
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# # Opt-in для будущего поведения Django 6.0
+# FORMS_URLFIELD_ASSUME_HTTPS = True
