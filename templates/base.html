@@ -9,6 +9,29 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
         <div class="container">
             <a class="navbar-brand" href="{% url 'ads:ad_list' %}">Barter</a>
+                <ul class="navbar-nav ms-auto">
+                  {% if user.is_authenticated %}
+                    <li class="nav-item me-3 mt-2">
+                      {% if user.profile.avatar %}
+                        <img src="{{ user.profile.avatar.url }}" width="32" height="32" class="rounded-circle me-2">
+                      {% endif %}
+                      Привет, <strong>{{ user.username }}</strong>!
+                    </li>
+                    <li class="nav-item me-2">
+                      <a class="btn btn-outline-info" href="{% url 'profile' %}">Профиль</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="btn btn-outline-secondary" href="{% url 'logout' %}?next={{ request.path }}">Выйти</a>
+                    </li>
+                  {% else %}
+                    <li class="nav-item">
+                      <a class="btn btn-outline-primary me-2" href="{% url 'login' %}?next={{ request.path }}">Войти</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="btn btn-success" href="{% url 'signup' %}">Регистрация</a>
+                    </li>
+                  {% endif %}
+                </ul>
         </div>
     </nav>
     <div class="container">

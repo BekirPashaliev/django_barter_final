@@ -1,5 +1,6 @@
 from django import forms
 from .models import Ad, ExchangeProposal
+from .models import Profile
 
 class AdForm(forms.ModelForm):
     # URLField без схемы → автоматически добавляем https
@@ -13,3 +14,8 @@ class ExchangeProposalForm(forms.ModelForm):
     class Meta:
         model = ExchangeProposal
         fields = ['ad_sender', 'ad_receiver', 'comment']
+
+class ProfileForm(forms.ModelForm):
+    class Meta:
+        model = Profile
+        fields = ["avatar", "bio"]

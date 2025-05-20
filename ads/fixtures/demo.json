@@ -1,0 +1,24 @@
+[
+  {
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+      "username": "demo",
+      "password": "Bg!s_GAha@yA=qWLpZ",
+      "is_active": true
+    }
+  },
+  {
+    "model": "ads.ad",
+    "pk": 1,
+    "fields": {
+      "user": 1,
+      "title": "Настольная игра «Каркассон»",
+      "description": "Полный комплект, почти новая",
+      "image_url": "https://avatars.mds.yandex.net/get-mpic/1865271/img_id5899501970100281689.jpeg/orig",
+      "category": "Games",
+      "condition": "used",
+      "created_at": "2025-05-18T00:00:00Z"
+    }
+  }
+]

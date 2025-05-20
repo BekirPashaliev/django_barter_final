@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Мой профиль{% endblock %}
+{% block content %}
+<h1>Профиль {{ user.username }}</h1>
+{% if user.profile.avatar %}
+  <img src="{{ user.profile.avatar.url }}" class="img-thumbnail mb-3" width="150">
+{% endif %}
+<p><strong>Bio:</strong> {{ user.profile.bio|default:"(пусто)" }}</p>
+<a href="{% url 'profile_edit' %}" class="btn btn-primary">Редактировать</a>
+{% endblock %}

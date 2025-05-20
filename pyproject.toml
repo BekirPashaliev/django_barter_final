@@ -1,0 +1,8 @@
+[tool.ruff]
+line-length = 88
+select = ["E", "F", "I001"]
+fix = true
+
+[tool.black]
+line-length = 88
+target-version = ["py312"]
